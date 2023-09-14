@@ -1,11 +1,7 @@
-import './Banner.css'
+import "./Banner.css";
 
-const Banner = ()=>{
-    return(
-        <header className='banner'> 
-            <img src={require("../../assets/Mural-menu.png")} alt="Banner do site"/>
-        </header>
-    )
-}
+const Banner = () => {
+  return <header className="banner"></header>;
+};
 
-export default Banner
+export default Banner;
