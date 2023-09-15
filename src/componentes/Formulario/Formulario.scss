@@ -1,9 +1,8 @@
-@import '../../assets/base/base.scss';
+@import "../../assets/base/base.scss";
 
 .formulario {
   width: 900px;
   margin: 128px auto;
-  text-align: center;
   h2 {
     color: #372521;
     font-family: Ubuntu;
@@ -11,8 +10,31 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    &::after{
-        @include Aftter();
+    text-align: center;
+    &::after {
+      @include Aftter();
     }
+  }
+  form {
+    width: 900px;
+    display: flex;
+    padding-bottom: 64px;
+    border-radius: 10px;
+    flex-direction: column;
+    background-color: #482D23;
+    h3 {
+      color: #fdf9f8;
+      font-family: Ubuntu;
+      font-size: 32px;
+      font-style: normal;
+      text-align: center;
+      margin-top: 64px;
+      font-weight: 400;
+      line-height: normal;
+      &::after {
+        @include Aftter();
+      }
+    }
+    
   }
 }

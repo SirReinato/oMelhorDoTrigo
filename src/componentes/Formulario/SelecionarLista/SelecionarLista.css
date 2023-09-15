@@ -1,4 +1,4 @@
-.inputsEafins {
+.selecionarLista {
   width: 80%;
   margin: 0 auto;
   display: flex;
@@ -7,7 +7,7 @@
   margin-bottom: 32px;
   gap: 8px;
 }
-.inputsEafins label {
+.selecionarLista label {
   color: #fff;
   font-family: Ubuntu;
   font-size: 18px;
@@ -15,9 +15,9 @@
   font-weight: 700;
   line-height: normal;
 }
-.inputsEafins input {
+.selecionarLista select {
   display: flex;
-  width: 100%;
+  width: 105%;
   padding: 20px;
   align-items: flex-start;
   border: none;
@@ -25,9 +25,9 @@
   color: #fff;
   background: #994412;
 }
-.inputsEafins input::-moz-placeholder {
+.selecionarLista select::-moz-placeholder {
   color: #fff;
 }
-.inputsEafins input::placeholder {
+.selecionarLista select::placeholder {
   color: #fff;
-}/*# sourceMappingURL=inputsEafins.css.map */
+}/*# sourceMappingURL=SelecionarLista.css.map */
