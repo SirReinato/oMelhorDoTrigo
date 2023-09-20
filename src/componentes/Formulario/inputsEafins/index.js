@@ -1,25 +1,23 @@
-import "./inputsEafins.css";
+import './inputsEafins.css'
 
-const InputsEaFins = (props) => {
-  const placeholderMudada = `${props.placeholder}...`;
+const InputsEafins = (props) => {
 
-  const captarMudanças = (event) =>{
-    props.dadosInseridos(event.target.value)
+  const receberDadosAoDigitarDoUsuario = (event)=>{
+    props.quandoDigitado(event.target.value)
   }
-
   return (
     <div className="inputsEafins">
-      <label>{props.nome}</label>
+      <label>{props.labelNome}</label>
       <input
+        placeholder={props.placeholder}
         required={props.obrigatorio}
-        type={props.type}
-        placeholder={placeholderMudada}
-        
+        type={props.tipo}
+
         value={props.valor}
-        onChange={captarMudanças}
+        onChange={receberDadosAoDigitarDoUsuario}
       />
     </div>
-  );
-};
+  )
+}
 
-export default InputsEaFins;
+export default InputsEafins;

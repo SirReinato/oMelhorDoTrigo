@@ -1,56 +1,64 @@
+import { useState } from "react";
 import Botao from "../Botao";
 import "./Formulario.css";
-import { useState } from "react";
 import SelecionarLista from "./SelecionarLista";
-import InputsEaFins from "./inputsEafins";
+import InputsEafins from "./inputsEafins";
 
-const Formulario = () => {
-  const tipoMenu = [
-    "Tradicional", "Doces e Bolos", "Pizzas"
-  ];
+const Formulario = (props) => {
+  const listaTipo = ["Tradicional", "Doce e Bolos", "Salgados"];
 
-  const [nome, setNome] = useState("");
-  const [tipo, setTipo] = useState("");
-  const [valor, setValor] = useState("");
-  const [foto, setFoto] = useState("");
+  const [nome, setNome] = useState('');
+  const [tipo, setTipo] = useState('');
+  const [valor, setValor] = useState('');
+  const [foto, setFoto] = useState('');
 
-  const aoAdicionar = (event)=>{
-    event.preventDefault()
-    console.log(nome, tipo, valor, foto);
-    
+  const enviado = (event)=>{
+    event.preventDefault();
+    props.aosAlimentosAdicionado({
+      nome, tipo, valor, foto
+    })
   }
+
   return (
     <section className="formulario">
       <h2>ALIMENTAR CARDÁPIO</h2>
-      <form onSubmit={aoAdicionar}>
-        <h3>Preencha os dados para adicionar alimento</h3>
-        <InputsEaFins
-          valor={nome}
-          dadosInseridos={(valor) => setNome(valor)}
-          nome="Nome"
+      <form onSubmit={enviado}>
+        <h3>Preencha os dados para adicinoar alimento</h3>
+        <InputsEafins
+          labelNome="Nome"
           obrigatorio={true}
           placeholder="Digite o nome do alimento"
+
+          valor={nome}
+          quandoDigitado={valor => setNome(valor)}
         />
+
         <SelecionarLista
+          labelNome="Tipo"
+          obrigatorio={true}
+          listaTipo={listaTipo}
+
           valor={tipo}
-          dadosInseridos={(valor) => setTipo(valor)}
-          nome="Tipo"
-          placeholder="Selecione o tipo"
-          tipoMenu={tipoMenu}
+          quandoDigitado={valor => setTipo(valor)}
         />
-        <InputsEaFins
+
+        <InputsEafins
+          labelNome="Valor"
+          obrigatorio={true}
+          placeholder="Digite o valor ( R$ ) do alimento"
+          
           valor={valor}
-          dadosInseridos={(valor) => setValor(valor)}
-          nome="valor"
-          placeholder="coloque o preço"
-          obrigatorio={true}
+          quandoDigitado={valor => setValor(valor)}
         />
-        <InputsEaFins
-          valor={foto}
-          dadosInseridos={(valor) => setFoto(valor)}
-          type="file"
-          nome="Foto"
+
+        <InputsEafins
+          labelNome="Foto"
           obrigatorio={true}
+          placeholder="Coloque a foto do alimento"
+          tipo="file"
+
+          valor={foto}
+          quandoDigitado={valor => setFoto(valor)}
         />
         <Botao>ADICIONAR</Botao>
       </form>
