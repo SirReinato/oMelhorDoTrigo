@@ -9,7 +9,7 @@ const Cardapio = (props) => {
     >
       <h3 style={{ borderColor: props.corSecundaria }}>{props.nome}</h3>
       <div className="alimentoConteiner">
-        {props.alimentos.map(alimento => 
+        {props.alimentos.map((alimento) => 
         <Alimento
             key={alimento.nome}
             nome={alimento.nome}
