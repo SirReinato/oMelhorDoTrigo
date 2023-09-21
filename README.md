@@ -1,6 +1,6 @@
 # O melhor do trigo
 
-Esse é um projeto feito com a framework `react`, `javaScript`, e com o auxilio do `scss`
+Esse é um projeto feito com `react.js` e com o auxilio do `scss`
 
 ## Sua ideia primaria
 
