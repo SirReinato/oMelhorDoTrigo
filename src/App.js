@@ -3,6 +3,7 @@ import "./App.css";
 import Banner from "./componentes/Banner";
 import Formulario from "./componentes/Formulario/Formulario";
 import Cardapio from "./componentes/Cardapio";
+import Footer from "./componentes/Footer";
 
 function App() {
   const itensCardapio = [
@@ -85,12 +86,14 @@ function App() {
 
   return (
     <div className="App">
+      {/* Banner */}
       <Banner />
+      {/* Formulario */}
       <Formulario
         listaTipo={itensCardapio.map((nomeAlimento) => nomeAlimento.nome)}
         aosAlimentosAdicionado={(item) => setCardapio([...cardapio, item])}
       />
-
+      {/* Cardapio */}
       {itensCardapio.map((item) => (
         <Cardapio
           key={item.nome}
@@ -99,12 +102,12 @@ function App() {
           corSecundaria={item.corSecundaria}
 
           alimentos={cardapio.filter(comida => {
-            console.log(comida.tipo);
             return comida.tipo === item.nome
           } )}
-          
         />
       ))}
+      {/* Footer */}
+      <Footer/>
     </div>
   );
 }
