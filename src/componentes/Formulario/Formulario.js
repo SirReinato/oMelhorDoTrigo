@@ -5,7 +5,6 @@ import SelecionarLista from "./SelecionarLista";
 import InputsEafins from "./inputsEafins";
 
 const Formulario = (props) => {
-  const listaTipo = ["Tradicional", "Doce e Bolos", "Salgados"];
 
   const [nome, setNome] = useState('');
   const [tipo, setTipo] = useState('');
@@ -17,6 +16,10 @@ const Formulario = (props) => {
     props.aosAlimentosAdicionado({
       nome, tipo, valor, foto
     })
+    setNome('')
+    setTipo('')
+    setValor('')
+    setFoto('')
   }
 
   return (
@@ -36,7 +39,7 @@ const Formulario = (props) => {
         <SelecionarLista
           labelNome="Tipo"
           obrigatorio={true}
-          listaTipo={listaTipo}
+          listaTipo={props.listaTipo}
 
           valor={tipo}
           quandoDigitado={valor => setTipo(valor)}
@@ -55,7 +58,6 @@ const Formulario = (props) => {
           labelNome="Foto"
           obrigatorio={true}
           placeholder="Coloque a foto do alimento"
-          tipo="file"
 
           valor={foto}
           quandoDigitado={valor => setFoto(valor)}
